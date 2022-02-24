@@ -1,5 +1,4 @@
-# number of rooms = NoOfrooms
-# number of hours we need to consider = NoOfhours {9AM to 6PM i.e. 9 hours }
+
 # meeting room details which is dictionary of room number as key and value is list of two values starting and ending time of the meeting
 # OccupiedRoomDetails = {0 : ["9AM", "11AM"], 1: ["10AM", "12AM"], 2: ["11AM", "12AM"], 3: ["9AM", "10AM"]}
 
@@ -24,4 +23,4 @@ def FindMeetingRoomlist(TimeInstance):
 
 
 
-print(FindMeetingRoomlist("10AM"))
+print(FindMeetingRoomlist("10AM")) #[3, 4, 6, 8]
