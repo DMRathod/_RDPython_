@@ -2,8 +2,6 @@
 # meeting room details which is dictionary of room number as key and value is list of two values starting and ending time of the meeting
 # OccupiedRoomDetails = {0 : ["9AM", "11AM"], 1: ["10AM", "12AM"], 2: ["11AM", "12AM"], 3: ["9AM", "10AM"]}
 
-from unittest import result
-
 
 def FindMeetingRoomlist(TimeInstance):        
     arr = [[1, 1, 0, 0], [0, 1, 1, 0], [0, 0, 1, 0], [1,0, 0, 0], [1, 1, 0, 1], [1, 0, 0, 1], [0, 1, 0, 0], [0, 0, 0, 1]]
