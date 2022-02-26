@@ -1,20 +1,53 @@
 ns1 = [3]
 ns2 = [1]
-ns = [1,15,6,17,2,3,5,6]
+ns = [1,17,2,3,5,6]
+
+# sort will deivide array in 2 parts till one element left and then it will 
+# merge in sorted manner.
+
+
+
 #iterative 
-
-def MSdevide(ns):
-    if(len(ns) ==  1):
+def MSdevide(ns, s, e):
+    if(len(ns) == 1):
         return ns
+    # if( e-s == 1):
+    #     return 
+    
 
-    m = len(ns) // 2
+
+    # m = len(ns) // 2
+    m = (s+e) // 2
     left  = ns[0:m]
     right = ns[m:]
-    left  = MSdevide(left)
-    right = MSdevide(right)
+    left  = MSdevide(ns, 0, m)
+    right = MSdevide(ns, m , len(ns))
+    # MSdevide(ns, s, m)
+    # MSdevide(ns, m , e)
+    return MSmerge1(left, right)
+    # return MSmergeInplace(ns, s, m, e)
 
-    return MSmerge2(left, 0, right, 0)
+# def MSmergeInplace(ns, s, m, e):
+#     nss = []
+#     i = s
+#     j = m
+#     while(i < m and j < e):
+#         if(ns[i] < ns[j]):
+#             nss.append(ns[i])
+#             i += 1
+#         else:
+#             nss.append(ns[j])
+#             j += 1
+#     if(i == m):
+#         for l in range(j, e):
+#             nss.append(ns[l])
+#     if(j == e):
+#         for k in range(i,m):
+#             nss.append(ns[k])
 
+#     for p in range(s,len(nss)):
+#         ns[s+p] = nss[p]
+    
 def MSmerge1(ns1, ns2):
     i = 0 
     ns = []
@@ -59,4 +92,5 @@ def MSmerge2(ns1, i, ns2, j):
         return ns 
 
 # print(MS1(ns1, 0, ns2, 0))
-print(MSdevide(ns))
+print(MSdevide(ns, 0, len(ns)))
+print(ns)
